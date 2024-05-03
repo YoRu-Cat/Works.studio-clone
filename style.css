@@ -1,0 +1,98 @@
+@font-face {
+  font-family: FreightBigProLightItalic;
+  src: url(FreightBigProLight-Italic.woff);
+}
+@font-face {
+  font-family: FreightBigProLightReg;
+  src: url(FreightBigProLight-Regular.woff);
+}
+div {
+  font-family: myFirstFont;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body p {
+  font-feature-settings: "lnum", "liga", "kern";
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+#loader {
+  height: 100vh;
+  width: 100%;
+  background: black;
+  position: fixed;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 99;
+  /* display: none; */
+}
+#loader h1 {
+  position: relative;
+  z-index: 9;
+}
+#loader video {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  object-fit: cover;
+  z-index: 6;
+}
+#yellow1 {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background: #f5e41b;
+  z-index: 8;
+}
+#yellow2 {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background: #f5e41b;
+  z-index: 7;
+}
+#page1 {
+  height: 100vh;
+  width: 100%;
+  background: #f5e41b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#page1 h1,
+#loader h1 {
+  text-align: center;
+  font-size: 7vw;
+  font-family: FreightBigProLightReg;
+  font-weight: 100;
+  line-height: 5vw;
+  padding: 120px;
+  letter-spacing: -4px;
+}
+#page1 h1 span,
+#loader h1 span {
+  font-family: FreightBigProLightItalic;
+}
+#page2 {
+  height: 100vh;
+  width: 100%;
+  background: rgb(64, 131, 117);
+}
+#page3 {
+  height: 100vh;
+  width: 100%;
+  background: rgb(72, 64, 131);
+}
