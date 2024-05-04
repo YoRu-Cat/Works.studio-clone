@@ -81,6 +81,9 @@ body p a {
   align-items: center;
   justify-content: space-between;
 }
+#nav svg path {
+  fill: #000;
+}
 nav {
   display: flex;
   align-items: center;
@@ -185,7 +188,145 @@ nav button {
 #page2 {
   height: 100vh;
   width: 100%;
-  background: rgb(64, 131, 117);
+  background: rgb(0, 0, 0);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+#page2 .cover {
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  opacity: 0.1;
+}
+#page2 button {
+  width: 40px;
+  height: 14px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  outline: none;
+  cursor: pointer;
+  font-feature-settings: "lnum", "liga", "kern";
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  position: absolute;
+  bottom: 27px;
+}
+#page2_footer svg path {
+  fill: #fff;
+}
+.elem {
+  /* background: red; */
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  z-index: 9;
+}
+.elem .blur-right {
+  position: absolute;
+  width: 8%;
+  left: 70%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to right, #f5e41b, transparent);
+  height: 100%;
+  z-index: 8;
+}
+.elem .blur-left {
+  position: absolute;
+  width: 8%;
+  left: 30%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to right, transparent, #f5e41b);
+  height: 100%;
+  z-index: 8;
+}
+.elem .blur-center {
+  position: absolute;
+  width: 32%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #f5e41b;
+  height: 100%;
+  z-index: 8;
+}
+.elem h2 {
+  font-size: 7vw;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-family: FreightBigProLightReg;
+  position: relative;
+  z-index: 9;
+  transition: all ease 0.2s;
+  line-height: 8vh;
+}
+.elem .moving {
+  background: #f5e41b;
+  width: 100%;
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%) scaleY(0);
+  transition: all ease 0.3s;
+  overflow: hidden;
+}
+.elem .moving .moving-in {
+  white-space: nowrap;
+  display: inline-block;
+  animation-name: moving;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.elem .moving .moving-in h5 {
+  color: #000;
+  display: inline-block;
+  font-family: NeueLight;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: all ease 0.3s;
+  transition-delay: 0.2s;
+  padding: 8px 12px;
+  font-feature-settings: "lnum", "liga", "kern";
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 1px;
+  opacity: 0;
+}
+@keyframes moving {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.elem:hover .moving {
+  transform: translate(0, -50%) scaleY(1);
+}
+.elem:hover .moving h5 {
+  opacity: 1;
+}
+.elem:hover h2 {
+  font-family: FreightBigProLightItalic;
+  color: #000;
 }
 #page3 {
   height: 100vh;

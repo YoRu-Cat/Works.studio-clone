@@ -37,3 +37,12 @@ const scroll = new LocomotiveScroll({
   smooth: true,
   lerp: 0.05,
 });
+
+var main = document.querySelector("#page2");
+var elems = document.querySelectorAll(".elem");
+elems.forEach(function (elem) {
+  elem.addEventListener("mouseenter", function () {
+    var bgImage = elem.getAttribute("data-img");
+    main.style.backgroundImage = `url(${bgImage})`;
+  });
+});
