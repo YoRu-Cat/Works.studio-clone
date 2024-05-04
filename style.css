@@ -6,6 +6,14 @@
   font-family: FreightBigProLightReg;
   src: url(FreightBigProLight-Regular.woff);
 }
+@font-face {
+  font-family: NeueReg;
+  src: url(NeueHaasDisplay-Mediu.woff);
+}
+@font-face {
+  font-family: NeueLight;
+  src: url(NeueHaasDisplay-Thin.woff);
+}
 div {
   font-family: myFirstFont;
 }
@@ -19,7 +27,7 @@ body {
   height: 100%;
   width: 100%;
 }
-body p {
+body p a {
   font-feature-settings: "lnum", "liga", "kern";
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -64,6 +72,66 @@ body p {
   background: #f5e41b;
   z-index: 7;
 }
+#nav {
+  position: absolute;
+  width: 100%;
+  padding: 30px 60px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav {
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+}
+nav a,
+#page1_footer a {
+  display: inline-block;
+  padding-right: 2px;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: NeueLight;
+  text-transform: uppercase;
+  line-height: 1.9em;
+  letter-spacing: 0.03em;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: color 0.3s, opacity 0.3s;
+  position: relative;
+  color: #000;
+  text-decoration: none;
+  margin-left: 4vw;
+}
+#page1_footer a {
+  margin: 0;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  top: 80%;
+  left: 0;
+  background: #000;
+  transform-origin: bottom center;
+  transition: transform 0.25s ease;
+}
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
+}
+nav button {
+  background: none;
+  border: none;
+  display: inline-block;
+  margin-left: 4vw;
+  font-size: 1.5vw;
+  font-weight: 100;
+}
 #page1 {
   height: 100vh;
   width: 100%;
@@ -71,6 +139,8 @@ body p {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 #page1 h1,
 #loader h1 {
@@ -86,6 +156,32 @@ body p {
 #loader h1 span {
   font-family: FreightBigProLightItalic;
 }
+#page1_footer {
+  display: flex;
+  position: absolute;
+  bottom: 27px;
+  left: 0;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 60px;
+}
+#page1_footer a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  top: 80%;
+  left: 0;
+  background: #000;
+  transform-origin: bottom center;
+  transition: transform 0.25s ease;
+}
+#page1_footer a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
+}
 #page2 {
   height: 100vh;
   width: 100%;
@@ -95,4 +191,9 @@ body p {
   height: 100vh;
   width: 100%;
   background: rgb(72, 64, 131);
+}
+#page4 {
+  height: 100vh;
+  width: 100%;
+  background: rgb(111, 64, 131);
 }
