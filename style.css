@@ -81,6 +81,10 @@ body p a {
   align-items: center;
   justify-content: space-between;
 }
+#nav svg {
+  height: 1.5vw;
+  width: auto;
+}
 #nav svg path {
   fill: #000;
 }
@@ -93,7 +97,7 @@ nav a,
 #page1_footer a {
   display: inline-block;
   padding-right: 2px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 800;
   font-family: NeueLight;
   text-transform: uppercase;
@@ -329,12 +333,68 @@ nav button {
   color: #000;
 }
 #page3 {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-  background: rgb(72, 64, 131);
+  background: #fff;
 }
-#page4 {
+.image-container {
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.image-div {
+  width: auto;
+  /* background-color: red; */
+  position: relative;
+  margin: 20px;
+  overflow: hidden;
+}
+.image-div img {
+  height: 100%;
+  transition: all ease 0.2s;
+  width: 100%;
+  object-fit: cover;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #0000001a;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 2;
+  transition: all ease 0.2s;
+}
+.overlay p {
+  font-size: 3.5vw;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 2.8vw;
+  opacity: 0;
+  transition: all ease 0.2s;
+  font-family: FreightBigProLightReg;
+}
+.image-div:hover .overlay {
+  background: #0b0b0b;
+}
+.image-div:hover .overlay p {
+  opacity: 1;
+}
+.image-div:hover img {
+  transform: scale(1.1);
+}
+.line {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+}
+/* #page4 {
   height: 100vh;
   width: 100%;
   background: rgb(111, 64, 131);
-}
+} */
