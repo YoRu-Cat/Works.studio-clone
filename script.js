@@ -32,10 +32,25 @@ function loading() {
 }
 loading();
 
+const page2 = document.querySelector("#page2");
+const page3 = document.querySelector("#page3");
+
 const scroll = new LocomotiveScroll({
   el: document.querySelector("#main"),
   smooth: true,
   lerp: 0.05,
+});
+
+document.querySelector("#footer h2").addEventListener("click", () => {
+  scroll.scrollTo(0);
+});
+document
+  .querySelector("#page1_footer a:nth-child(2)")
+  .addEventListener("click", () => {
+    scroll.scrollTo(page2);
+  });
+document.querySelector("#page2 button").addEventListener("click", () => {
+  scroll.scrollTo(page3);
 });
 
 var main = document.querySelector("#page2");
